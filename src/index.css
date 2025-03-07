@@ -1,0 +1,120 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+    font-family: sans-serif;
+}
+.container{
+  max-width: 990px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.nav-container{
+  width: 100%;
+ display: flex;
+ justify-content: space-between;
+ align-items: center; 
+
+}
+.nav-container h1{
+  font-size:23px ;
+  font-weight: 600;  
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+   transition: all 0.3s ease;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  transition: all 0.3s ease;
+  
+}
+
+button {
+  padding: 5px 10px;
+  font-size: 23px;
+  cursor: pointer;
+ border: none;
+ background-color: blue;
+  transition: all 0.3s ease;
+}
+
+/* Hero */
+
+.hero-section{
+  
+  padding-top: 50px;
+
+}
+.hero-top{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ text-align: center;
+}
+.hero{
+  font-size: 36px;
+ 
+}
+.char-container{
+  width: 100%;
+  padding-top: 20px;
+  
+}
+.char-container textarea{
+  width: 100%;
+  padding:8px ;
+  height: 150px;
+  border: #e3e3f5 2px solid;
+  border-radius: 10px;
+  background-color: #f2f2f7;
+  resize: none;
+}
+textarea::-webkit-scrollbar {
+  width: 4px; 
+  height: 8px;
+}
+textarea:focus{
+  border-color: #cacadf;
+  outline: none;
+  color: #686767;
+}
+
+/* Responsiveness */
+
+/* Tablets */
+@media screen and (max-width:768px){
+
+  .nav-container h1{
+    font-size: 18px;
+    color: red;
+    
+  
+  }
+  button{
+    font-size: 18px;
+    padding: 10px 15px;
+  }
+}
+
+/* Phones */
+@media screen and (max-width: 400px){
+  
+  .nav-container h1{
+    font-size: 14px;
+    color: green;
+  }
+  button{
+    font-size: 14px;
+    padding: 8px 13px;
+  }
+}
