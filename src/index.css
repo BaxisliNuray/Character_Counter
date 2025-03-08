@@ -34,8 +34,40 @@ body{
 .dark-mode {
   background-color: black;
   color: white;
-  transition: all 0.3s ease;
-  
+  transition: all 0.3s ease; 
+}
+
+.dark-mode .counter-box  {
+  color: black;
+}
+.dark-mode .char-container  textarea  {
+  background-color:#21222c;
+border: #5e5d5d 1px solid;
+color: #cacadf;
+}
+.dark-mode .char-container  textarea:hover  {
+  background-color:#2a2b37;
+}
+[type="checkbox"] {
+
+  position: relative;
+}
+
+.dark-mode [type="checkbox"]:hover {
+  background-color: rgba(0, 123, 255, 0.2);  /* Light blue background on hover */
+  border-color: #007bff;                   /* Border color on hover */
+}
+
+.dark-mode input[type="checkbox"]:hover::after {
+  content: '✔';                          /* Tick symbol */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);      /* Center the tick symbol */
+                         /* Size of the tick symbol */
+  color: black;
+  background-color: #c27cf8;                         /* Color of the tick symbol */
+  pointer-events: none;                   /* Prevent interfering with hover */
 }
 
 button {
@@ -88,22 +120,162 @@ textarea:focus{
   outline: none;
   color: #686767;
 }
+/* options */
+.options{
+  width: 100%;
+  padding-top:15px ;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.options label{
+  margin-left:8px;
+}
+.options input{
+  margin-right:7px;
+}
+
+
+/* counter for char word and sentences */
+
+.counter-section{
+  width:100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+  margin: 0 auto;
+ 
+}
+.counter-box{
+  width: 300px;
+  height: 150px;  
+  display: flex;
+flex-direction: column;
+align-items: flex-start;
+border-radius: 10px;
+padding: 20px;
+
+
+}
+
+.counter-box p{
+  font-size: 55px;
+  font-weight:bold;
+  
+}
+.counter-box h3{
+  
+  font-size: 17px;
+  font-weight:100;
+}
+.counter-section div:nth-child(1){
+  background-color: #d3a0fa;
+
+}
+.counter-section div:nth-child(2){
+  background-color: #ff9f00;
+
+}
+.counter-section div:nth-child(3){
+  background-color: #fe8159;
+
+}
+
+/* Letter density */
+.density-section {
+  padding-top: 5ch;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.letters {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.letter-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.letter-label {
+  font-weight: bold;
+  margin-right: 10px;
+  min-width: 30px; 
+}
+
+.progress-bar {
+  flex: 1;
+  height: 20px;
+  background: #ddd;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #d3a0fa;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.percentage-text {
+  position: relative;
+  z-index: 2;
+  font-size: 14px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
 
 /* Responsiveness */
+/* PC */
+@media (max-width: 1004px)  {
+  
+  .counter-box {
+    width: 250px;
+    height: 150px;
+  }
+}
+
+
 
 /* Tablets */
-@media screen and (max-width:768px){
+@media screen and (max-width:868px){
 
   .nav-container h1{
     font-size: 18px;
-    color: red;
     
-  
   }
   button{
     font-size: 18px;
     padding: 10px 15px;
-  }
+  } 
+  .counter-box{
+    width: 200px;
+}
 }
 
 /* Phones */
@@ -116,5 +288,37 @@ textarea:focus{
   button{
     font-size: 14px;
     padding: 8px 13px;
+  }
+}
+@media screen and (max-width: 700px){
+  .options{
+    display: flex;
+    flex-direction: column;
+   align-items: flex-start;
+   
+  }
+  .checkbox{
+    display: flex;
+    flex-direction: column;
+   align-items: flex-start;
+    
+  }
+  
+  .options label{
+    margin-left:0px;
+    padding: 3px 0;
+  }
+  .read-time{
+    padding-top: 5px;
+  }
+  
+  .counter-section{
+  flex-direction: column;  
+  }
+  .counter-box{
+  width: 100%;
+  margin: 7px 0 ; 
+  
+  
   }
 }

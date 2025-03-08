@@ -2,6 +2,7 @@ import './App.css'
 import'../src/index.css'
 import Navbar from './Components/Navbar'
 import Hero from './Components/Hero'
+import Density from './Components/Density'
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
       <div className="container">
       <Navbar/>
       <Hero/>
+      <Density/>
       </div>
     </>
   )
